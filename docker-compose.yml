@@ -1,0 +1,13 @@
+version: "3"
+services:
+
+  ros2-env:
+    build:
+      context: ./image
+      args:
+        HOSTUSER: ${HOSTUSER}
+        HOSTUID: ${HOSTUID}
+        HOSTGID: ${HOSTGID}
+    user: ${HOSTUSER}:${HOSTUSER}
+    volumes:
+      - /home/arthur/Desktop:/home/${HOSTUSER}/Desktop:rw
